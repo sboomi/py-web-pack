@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "python-web-park"
+version = "0.1.0"
+description = ""
+authors = ["Shadi Boomi <shadi.boomi@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "py_web_park" }]
+
+[tool.poetry.scripts]
+web-park = "py_web_park.cli:app"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = { extras = ["all"], version = "^0.9.0" }
+docker = "^7.0.0"
+cookiecutter = "^2.5.0"
+kubernetes = "^29.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.12.1"
+ruff = "^0.1.13"
+mypy = "^1.8.0"
+pre-commit = "^3.6.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.4"
+pytest-cov = "^4.1.0"
+pytest-xdist = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
