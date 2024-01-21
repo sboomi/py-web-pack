@@ -1,5 +1,6 @@
 import typer
 from py_web_park import enums
+from py_web_park import app_maker
 
 
 app = typer.Typer()
@@ -16,13 +17,14 @@ def callback():
 def create_app(
     name: str,
     kind: enums.AppKind = typer.Option(
-        enums.AppKind.WEBAPP, help="The kind of app to make"
+        enums.AppKind.FLASK, help="The kind of app to make"
     ),
 ):
     """
     Creating app
     """
     typer.echo(f"Creating app {name} with {kind}")
+    app_maker.create_app(name, python_version="3.11", app_kind=kind)
 
 
 @app.command()

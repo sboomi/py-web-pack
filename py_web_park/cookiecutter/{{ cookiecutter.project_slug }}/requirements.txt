@@ -1,0 +1,13 @@
+{%- if cookiecutter.app_kind == "flask" -%}
+flask==3.0.1
+{%- elif cookiecutter.app_kind == "streamlit" -%}
+streamlit==1.30.0
+{%- elif cookiecutter.app_kind == "dash" -%}
+dash==2.14.2
+{%- elif cookiecutter.app_kind == "fastapi" -%}
+fastapi==0.109.0
+{% endif %}
+
+{%- if cookiecutter.app_kind == "streamlit" or cookiecutter.app_kind == "dash" -%}
+pandas==2.2.0
+{% endif %}

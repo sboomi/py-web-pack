@@ -23,4 +23,9 @@ repos:
           - id: ruff
             args:
                 - --fix
+            exclude: >
+                (?x)^(
+                  {{ cookiecutter.project_slug }}/requirements.txt|
+                  {{ cookiecutter.project_slug }}/app.py
+                )$
           - id: ruff-format
