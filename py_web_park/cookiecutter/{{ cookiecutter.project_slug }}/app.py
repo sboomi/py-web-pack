@@ -1,4 +1,4 @@
-{%- if cookiecutter.app_kind == "flask" -%}
+{% if cookiecutter.app_kind == "flask" %}
 from flask import Flask
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Hello, World!</p>"
 
-{%- elif cookiecutter.app_kind == "streamlit" -%}
+{% elif cookiecutter.app_kind == "streamlit" %}
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -45,7 +45,7 @@ filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 st.subheader('Map of all pickups at %s:00' % hour_to_filter)
 st.map(filtered_data)
 
-{%- elif cookiecutter.app_kind == "dash" -%}
+{% elif cookiecutter.app_kind == "dash" %}
 from dash import Dash, html, dcc, callback, Output, Input
 import plotly.express as px
 import pandas as pd
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
-{%- elif cookiecutter.app_kind == "fastapi" -%}
+{% elif cookiecutter.app_kind == "fastapi" %}
 from fastapi import FastAPI
 
 app = FastAPI()

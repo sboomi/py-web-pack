@@ -4,6 +4,7 @@
   "app_kind": ["flask", "fastapi", "dash", "streamlit"],
   "python_version": ["3.10", "3.11", "3.12"],
   "project_version": "0.1.0",
+  "packaging": ["pip", "poetry"],
   "open_source_license": [
     "MIT",
     "BSD",
